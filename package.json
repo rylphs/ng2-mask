@@ -1,0 +1,34 @@
+{
+  "name": "ng2-mask",
+  "version": "0.0.1",
+  "description": "'Comprehensive and easy to use input mask for angular2.'",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rylphs/ng2-mask.git"
+  },
+  "keywords": [
+    "angular2",
+    "ng2",
+    "mask",
+    "input",
+    "angular",
+    "ng",
+    "component"
+  ],
+  "author": "Raphael Ferreira",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rylphs/ng2-mask/issues"
+  },
+  "homepage": "https://github.com/rylphs/ng2-mask#readme",
+  "devDependencies": {
+    "jasmine": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2"
+  }
+}

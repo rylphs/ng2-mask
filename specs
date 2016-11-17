@@ -1,7 +1,29 @@
+
+mask: ['{-}:[-+]/[- ]', 'R$', '{.999+}', '{,99}?:']
+
 mask: ['{-}?', 'R$', '{.999+}', ',99']
-mask: ['{-}?:[-+]/[- ]', 'R$', '{.999+}', '{,99}?:']
-mask: ['#','{#}[0-9a-A]']
+mask: ['{[- :-+]}', 'R$', '{.999+}', '{,99}?:']
+mask: ['{[-:]}', 'R$', '{.999+}', '{,99}?:']
+mask: ['{[0-9a-A]}','{[0-9a-A]}'] / mask: ['##'], placeholder: {'#':[0-9a-A]}
 mask: ['(99)','{9}?', '9999-9999'']
 
 
+Símbolos opcionais ({[]?})
+	-Ativados em dois casos: tamanho da string ou caracter digitado corresponde ao padrão
+		mask: {[ABC]}?, {-[ABC]}?, {9999},  
+			teclado: AA934, saída: A-A934
+			teclado: A934, saída A934
+
 -Tratar simbolos fixos
+-Cógigos de regex:
+	9:números
+	#:hexadecimal
+	A:letras maiúsculas
+	a:letras (maiusculas ou minusculas)
+	z:letras minúsculas
+	n:letras e números
+	.:qualquer dígito
+
+
+Primeiro cenario, mascaras simples, numérico somente
+	mask: ['999-999']
