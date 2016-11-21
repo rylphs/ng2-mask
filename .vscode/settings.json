@@ -12,5 +12,6 @@
         "node_modules": true,
         "spec": true,
         "lib": true
-    }
+    },
+     "markdown.styles": [".vscode/md.css"],
 }
