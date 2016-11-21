@@ -1,5 +1,6 @@
 # Logs
-src/*.js
+app/**/*.js
+app/**/*.js.map
 logs
 *.log
 npm-debug.log*
