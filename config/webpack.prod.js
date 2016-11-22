@@ -9,7 +9,7 @@ module.exports = {
     entry: {
         "polyfills": "./src/polyfills.ts",
         "resources": "./src/resources.ts",
-        "app": "./src/main.prod.ts"
+        "app": "./ng2-mask.ts"
     },
 
     output: {
@@ -33,17 +33,17 @@ module.exports = {
     },
 
     plugins: [
-        new AotPlugin({
+      /*  new AotPlugin({
             entryModule: "src/app/app.module#AppModule",
             tsConfigPath: "./tsconfig.json"
-        }),
+        }),*/
         new webpack.optimize.CommonsChunkPlugin({
-            name: ["app", "resources", "polyfills"]
+            name: ["app", "polyfills"]
         }),
         new ExtractTextPlugin("[name].[hash].css"),
-        new HtmlWebpackPlugin({
+        /*new HtmlWebpackPlugin({
             template: "src/index.html"
-        }),
+        }),*/
         new webpack.NoErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: { warnings: false },

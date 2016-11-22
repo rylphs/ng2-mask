@@ -10,7 +10,3 @@ import "rxjs/Rx";
 
 //Scripts
 //import "script-loader!chart.js/dist/Chart.bundle.min.js";
-
-//Styles
-import "primeng/resources/primeng.min.css";
-import "../resources/other/styles.css";
