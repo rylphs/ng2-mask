@@ -38,8 +38,11 @@ export class GroupParser {
     }
 
     private nextToken() {
-
             return this.currentToken.next ? (this.currentToken = this.currentToken.next) : null;
+    }
+
+    private resetToken(){
+        this.currentToken = this.firstToken;
     }
 
     placeStaticTokens(input: string): string {
@@ -49,9 +52,6 @@ export class GroupParser {
          while (token.next !== this.currentToken){
              if (isStatic(token.exp)) {
                  input = input.substring(0, position) + token.exp + input.substring(position);
-             }
-             else {
-                // result += input.substr(position, token.count);
              }
              token = token.next;
              position++;

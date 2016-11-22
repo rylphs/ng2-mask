@@ -1,74 +1,55 @@
 {
-  "name": "ng2-mask",
-  "version": "0.0.1",
-  "description": "Comprehensive and easy to use input mask for angular2.",
-  "scripts": {
-    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
-    "pree2e": "npm run webdriver:update",
-    "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first",
-    "lint": "tslint ./app/**/*.ts -t verbose",
-    "lite": "lite-server",
-    "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\"",
-    "test-once": "tsc && karma start karma.conf.js --single-run",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "webdriver:update": "webdriver-manager update"
-  },
-  "keywords": [
-    "angular2",
-    "ng2",
-    "mask",
-    "input",
-    "angular",
-    "ng",
-    "component"
-  ],
-  "author": "Raphael Ferreira",
-  "license": "MIT",
-  "repository": {},
-  "bugs": {
-    "url": "https://github.com/rylphs/ng2-mask/issues"
-  },
-  "homepage": "https://github.com/rylphs/ng2-mask#readme",
-  "dependencies": {
-    "@angular/common": "~2.2.0",
-    "@angular/compiler": "~2.2.0",
-    "@angular/core": "~2.2.0",
-    "@angular/forms": "~2.2.0",
-    "@angular/http": "~2.2.0",
-    "@angular/platform-browser": "~2.2.0",
-    "@angular/platform-browser-dynamic": "~2.2.0",
-    "@angular/router": "~3.2.0",
-    "@angular/upgrade": "~2.2.0",
-    "angular-in-memory-web-api": "~0.1.15",
-    "systemjs": "0.19.40",
-    "core-js": "^2.4.1",
-    "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.0-beta.12",
-    "zone.js": "^0.6.26"
-  },
-  "devDependencies": {
-    "@types/core-js": "^0.9.34",
-    "@types/jasmine": "^2.5.36",
-    "@types/node": "^6.0.46",
-    "@types/selenium-webdriver": "^2.53.33",
-    "canonical-path": "0.0.2",
-    "concurrently": "^3.1.0",
-    "http-server": "^0.9.0",
-    "jasmine-core": "~2.4.1",
-    "karma": "^1.3.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-cli": "^1.0.1",
-    "karma-htmlfile-reporter": "^0.3.4",
-    "karma-jasmine": "^1.0.2",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-spec-reporter": "0.0.26",
-    "lite-server": "^2.2.2",
-    "lodash": "^4.16.4",
-    "protractor": "4.0.9",
-    "rimraf": "^2.5.4",
-    "tslint": "^3.15.1",
-    "typescript": "^2.0.3",
-    "webdriver-manager": "10.2.5"
-  }
+    "name": "ng2-mask",
+    "version": "0.0.1",
+    "description": "Comprehensive and easy to use input mask for angular2.",
+    "author": "Raphael Ferreira",
+    "license": "MIT",
+    "keywords": [
+        "angular2","ng2","mask","input","angular","ng","component"
+    ],
+    "repository": {
+         "type": "git",
+        "url": "https://github.com/rylphs/ng2-mask.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rylphs/ng2-mask/issues"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --config config/webpack.dev.js --progress --port 3000",
+        "build": "del -f 'dist' && webpack --config config/webpack.prod.js --progress --profile --bail"
+    },
+    "dependencies": {
+        "@angular/common": "2.2.1",
+        "@angular/compiler": "2.2.1",
+        "@angular/core": "2.2.1",
+        "@angular/forms": "2.2.1",
+        "@angular/http": "2.2.1",
+        "@angular/platform-browser": "2.2.1",
+        "@angular/platform-browser-dynamic": "2.2.1",
+        "@angular/router": "3.2.1",
+        "core-js": "2.4.1",
+        "reflect-metadata": "0.1.8",
+        "rxjs": "5.0.0-beta.12",
+        "zone.js": "0.6.26"
+    },
+    "devDependencies": {
+        "@angular/compiler-cli": "2.2.1",
+        "@ngtools/webpack": "1.1.7",
+        "@types/core-js": "0.9.34",
+        "@types/node": "6.0.48",
+        "angular2-template-loader": "0.6.0",
+        "awesome-typescript-loader": "3.0.0-beta.3",
+        "css-loader": "0.26.0",
+        "del-cli": "0.2.0",
+        "extract-text-webpack-plugin": "2.0.0-beta.4",
+        "file-loader": "0.9.0",
+        "html-loader": "0.4.4",
+        "html-webpack-plugin": "2.24.1",
+        "raw-loader": "0.5.1",
+        "script-loader": "0.7.0",
+        "style-loader": "0.13.1",
+        "typescript": "2.0.10",
+        "webpack": "2.1.0-beta.27",
+        "webpack-dev-server": "2.1.0-beta.11"
+    }
 }
