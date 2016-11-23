@@ -1,2 +1,7 @@
 dist
 node_modules
+src/**/*.js
+src/**/*.js.map
+.npmignore
+aot/
+src/**/*.metadata.json

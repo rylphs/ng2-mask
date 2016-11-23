@@ -9,8 +9,9 @@
         "sourceMap": true,
         "suppressImplicitAnyIndexErrors": true,
         "target": "es5"
+        
     },
     "angularCompilerOptions": {
-        "genDir": "./src/ngfactory"
+        "genDir": "aot"
     }
 }
