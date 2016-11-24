@@ -1,11 +1,20 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     "files.exclude": {
-        "src/**/*.js": {"when": "$(basename).ts"},
+        "src/**/*.js": {
+            "when": "$(basename).ts"
+        },
         "src/**/*.js.map": true,
         "src/**/*.metadata.json": true,
-        "*.js": {"when": "$(basename).ts"},
+        "*.js": {
+            "when": "$(basename).ts"
+        },
         "*.js.map": true,
-        "*.metadata.json": true
+        "*.metadata.json": true,
+        "node_modules": true,
+        "aot": true,
+        ".vscode": true,
+        ".gitignore" : true,
+        ".npmignore" : true
     }
 }

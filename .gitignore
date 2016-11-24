@@ -1,5 +1,8 @@
 dist
 node_modules
+index.js
+index.js.map
+index.metadata.json
 src/**/*.js
 src/**/*.js.map
 .npmignore

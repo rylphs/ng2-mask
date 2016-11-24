@@ -38,28 +38,32 @@ export class GroupParser {
     }
 
     private nextToken() {
-            return this.currentToken.next ? (this.currentToken = this.currentToken.next) : null;
+        return this.currentToken = this.currentToken.next;
     }
 
-    private resetToken(){
+    private resetToken() {
         this.currentToken = this.firstToken;
     }
 
     placeStaticTokens(input: string): string {
-         let result: string = "";
-         let token: Token = this.firstToken;
-         let position: number = 0;
-         while (token.next !== this.currentToken){
-             if (isStatic(token.exp)) {
-                 input = input.substring(0, position) + token.exp + input.substring(position);
-             }
-             token = token.next;
-             position++;
-         }
+        let result: string = "";
+        let token: Token = this.firstToken;
+        let position: number = 0;
+        if(input === "" || input === null || input === undefined) return "";
+        while (token.next && token.next !== this.currentToken) {
+            if (isStatic(token.exp)) {
+                input = input.substring(0, position) + token.exp + input.substring(position);
+            }
+            token = token.next;
+            position++;
+        }
         return input;
     }
 
     parse(input: string): parseResult {
+        if(!this.currentToken || input === '' || input === null || input === undefined){
+            return {accept: false, result: ""};
+        }
         let accept = false;
         let result: string;
         let token = this.currentToken;
@@ -75,12 +79,22 @@ export class GroupParser {
         }
         else {
             this.parsed += (accept = token.exp.test(input)) ? input : "";
-            this.nextToken();
+            if(accept) this.nextToken();
         }
 
         result = this.placeStaticTokens(this.parsed);
         return {
             accept: accept, result: result
         };
+    }
+
+    parseAll(value: any): string {
+        this.parsed = "";
+        this.currentToken = this.firstToken;
+        value = value !== null ? (value + "") : "";
+        for (let i in value) {
+            this.parse(value[i]);
+        }
+        return this.placeStaticTokens(this.parsed);
     }
 }
